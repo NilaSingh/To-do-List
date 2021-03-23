@@ -16,7 +16,7 @@
                 <th><%= tasks[i].due %> </th>
                 <th>
                     <button type="submit" class="bools" id='<%= tasks[i].id%>' onclick="changeText(this)">False</button> 
-                    <button>View</button> 
+                    <button type="submit" onclick="document.location.href='/<%= tasks[i].id%>'">View</button> 
                     <button>Delete</button> 
                 </th>
             </tr>
