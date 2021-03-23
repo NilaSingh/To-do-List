@@ -4,7 +4,6 @@ app.set('view engine','ejs')
 let tasks=[]
 app.get('/',(req,res)=>{
     res.render('index',{tasks})
-//      res.render('index')
   })
 app.get('/newtask',(req,res)=>{
     res.render('Form')
@@ -12,11 +11,16 @@ app.get('/newtask',(req,res)=>{
 app.use(express.urlencoded({
     extended:true
 }))
+let id=0
 app.post('/',(req,res)=>{
-    let record={title:req.body.title,due:req.body.due, description:req.body.description}
+    let record={id:id, title:req.body.title,due:req.body.due, description:req.body.description}
     tasks.push(record)
+    id++
     console.log(tasks)
     res.redirect('/')
+})
+app.delete('/',(req,res)=>{
+    console.log(req)
 })
 
 app.listen(3000, function () {

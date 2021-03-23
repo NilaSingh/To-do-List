@@ -14,11 +14,23 @@
             <tr>
                 <th><%= tasks[i].title %> </th>
                 <th><%= tasks[i].due %> </th>
-                <th><button>False</button> <button>View</button> <button>Delete</button> </th>
+                <th>
+                    <button type="submit" class="bools" id='<%= tasks[i].id%>' onclick="changeText(this)">False</button> 
+                    <button>View</button> 
+                    <button>Delete</button> 
+                </th>
             </tr>
             <% } %>
     </table>
     <script>
+        function changeText(button){
+            if(button.innerText=="False"){
+                button.innerText="True"
+            }
+            else{
+                button.innerText="False"
+            }
+        }
     </script>
 </body>
 </html>
