@@ -2,12 +2,15 @@
     <body style="background-color: thistle;">
         <h1></h1>
         <div style="text-align: center;">
-            <button onclick="document.location.href='/newtask'">View Task</button>
-            <button onclick="document.location.href='/'">View List</button>
+            <h1>Task Details</h1>
+            <button onclick="document.location.href='/'"style="border: transparent;border-radius: 5px;color: blueviolet;border-color: white; padding: 10px;">View List</button>
         </div>
+        <h2>Title:</h2>
+        <div style="background-color: white; border-radius: 8px; padding: 5px;"><p><%= t.title %></p></div>
+        <h2>Due By:</h2>
+        <div style="background-color: white;border-radius: 8px;padding: 5px;"><p><%= t.due %></p></div>
         <h2>Description:</h2>
-        <h2>Date Created:</h2>
-        <h2>Due by:</h2>
+        <div style="background-color: white; border-radius: 8px;padding: 5px;"><p><%= t.description %></p></div>
         <script></script>
     </body>
 </html>

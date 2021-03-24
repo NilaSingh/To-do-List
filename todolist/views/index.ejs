@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <head>
-    <h1 id='heading' style="text-align: center;color: rgb(112, 111, 111);font-family: Arial, Helvetica, sans-serif;">My To-Do List</h1>
+    <h1 id='heading' style="text-align: center;font-family: 'Times New Roman', Times, serif">My To-Do List</h1>
 </head>
 <body style="background-color: thistle;">
-    <div style="text-align: center;"><button style="background-color:rgb(159, 33, 209); color: white;border-radius: 8px;padding: 10px 30px;font-size:12px;border-color: thistle;" id="newtask" type="submit" onclick="document.location.href='/newtask'"><b>NEW TASK<b></button></div><br>
-    <table style="width: 100%;">
-        <tr style="color: grey;">
+    <div style="text-align: center;">
+        <button style="background-color:blueviolet; color: white;border-radius: 8px;padding: 10px 30px;font-size:12px;border: transparent; font-family: 'Times New Roman', Times, serif;" id="newtask" type="submit" onclick="document.location.href='/newtask'">
+            <b>NEW TASK<b>                
+            </button>
+        </div>
+        <br>
+        <table style="width: 100%;">
+        <tr>
             <th>Title:<hr></th>
             <th>Due By:<hr></th>
             <th>Completed?<hr></th>
         </tr>
         <% for(let i=0; i<tasks.length ; i++) { %>
-            <tr>
+            <tr class="items" id='<%= tasks[i].id%>'>
                 <th><%= tasks[i].title %> </th>
                 <th><%= tasks[i].due %> </th>
                 <th>
-                    <button type="submit" class="bools" id='<%= tasks[i].id%>' onclick="changeText(this)">False</button> 
-                    <button type="submit" onclick="document.location.href='/<%= tasks[i].id%>'">View</button> 
-                    <button>Delete</button> 
+                    <button type="submit" onclick="changeText(this)" style="border: transparent;border-radius: 5px;color: blueviolet;border-color: white; padding: 5px;">False</button> 
+                    <button type="submit" onclick="document.location.href='/view/<%= tasks[i].id%>'"style="border: transparent;border-radius: 5px;color: blueviolet;border-color: white; padding: 5px;">View</button> 
+                    <button type="submit" onclick="document.location.href='/<%= tasks[i].id%>'"style="border: transparent;border-radius: 5px;color: blueviolet;border-color: white; padding: 5px;">Delete</button> 
                 </th>
             </tr>
             <% } %>
